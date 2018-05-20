@@ -1,8 +1,6 @@
 package kstuff
 
 
-// next: Using nullable values and checking for null
-
 fun main(args: Array<String>) {
     //simpleFunction(1)
     //simpleFunctionWithResult(2)
@@ -13,7 +11,9 @@ fun main(args: Array<String>) {
     //varargFun("a", "b")
     //varargFun(str = *arrayOf("a", "b"))
     //println(2 power 2)
-    localFun()
+    //localFun()
+    //useStringExtension("bliblablubb")
+    higherOrder { i -> i+1}
 }
 
 fun simpleFunction(param1: Int) {
@@ -38,10 +38,6 @@ fun varargFun(vararg str: String) {
     println(str)
 }
 
-infix fun Int.power(x : Int): Int{
-    return x * x
-}
-
 fun localFun() {
     val localVar = 2
     fun localFun(): Int {
@@ -50,6 +46,18 @@ fun localFun() {
     println(localFun())
 }
 
+infix fun Int.power(x : Int): Int{
+    return x * x
+}
 
+fun String.extensionFun() :String {
+    return this.toUpperCase()
+}
 
+fun useStringExtension(input : String) {
+    println(input.extensionFun())
+}
 
+fun higherOrder(f : (Int) -> (Int)) {
+    println(f(42))
+}

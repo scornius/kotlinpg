@@ -8,8 +8,9 @@ fun main(args: Array<String>) {
     //iterateRange()
     //iterateArray()
     //iterateArrayWithIndex()
+    iterateMap()
     //allNephews()
-    whileLoop()
+    //whileLoop()
 }
 
 fun isEven(a: Int): Boolean {
@@ -60,6 +61,15 @@ fun iterateArrayWithIndex() {
     for (i in array.indices) {
         println("$i = ${array[i]}")
     }
+}
+
+fun iterateMap() {
+    val map = mapOf("a" to 1, "b" to 2)
+    for ((key, value) in map) {
+        println("$key = $value")
+    }
+
+    println(map["a"])
 }
 
 fun allNephews() {

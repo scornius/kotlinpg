@@ -1,6 +1,6 @@
 package kstuff
 
-val fruits = arrayListOf("banana", "citron", "apple", "berry")
+val fruits = arrayListOf("banana", "lemon", "apple", "berry")
 
 
 fun main(args: Array<String>) {
