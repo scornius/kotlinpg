@@ -2,7 +2,8 @@ package kstuff
 
 
 fun main(args: Array<String>) {
-    callClassMethod()
+    //callClassMethod()
+    destructuring()
 }
 
 class Foo {
@@ -13,6 +14,29 @@ class Foo {
 
 fun callClassMethod() {
     Foo().someMethod("huhu")
+}
+
+fun destructuring() {
+    val user = User("Sepp", 57)
+    val (name, age) = user
+    println("$name is $age")
+}
+
+class WithConstructor(foo: String) {
+    var bar: String
+
+    init {
+        bar = foo
+    }
+}
+
+data class User(val name: String, val age: Int) {
+/*
+- equals()/hashCode() pair
+- toString() of the form "User(name=John, age=42)"
+- copy() function
+- componentN() functions corresponding to the properties in their order of declaration
+ */
 }
 
 class Nephews() {
