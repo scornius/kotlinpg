@@ -28,3 +28,8 @@ class Nephews() {
     }
     operator fun iterator() = this
 }
+
+object Singleton {
+    var foo = "bar"
+}
+
