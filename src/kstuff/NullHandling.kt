@@ -4,6 +4,7 @@ fun main(args: Array<String>) {
     //useNullableWithAutoCast()
     //checkNotNull()
     //checkNotNullElse()
+    forceIt()
 }
 
 fun mayReturnNull(): Int? {
@@ -25,7 +26,11 @@ fun checkNotNull() {
 }
 
 fun checkNotNullElse() {
-    var foo : Int? = null
+    val foo : Int? = null
     println(foo?.plus(1) ?: "nullinger")
 }
 
+fun forceIt() {
+    val foo : Int? = null
+    println(foo!!.plus(1))
+}

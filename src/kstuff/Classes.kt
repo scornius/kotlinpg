@@ -3,7 +3,8 @@ package kstuff
 
 fun main(args: Array<String>) {
     //callClassMethod()
-    destructuring()
+    //destructuring()
+    getterSetterConstructor()
 }
 
 class Foo {
@@ -16,20 +17,6 @@ fun callClassMethod() {
     Foo().someMethod("huhu")
 }
 
-fun destructuring() {
-    val user = User("Sepp", 57)
-    val (name, age) = user
-    println("$name is $age")
-}
-
-class WithConstructor(foo: String) {
-    var bar: String
-
-    init {
-        bar = foo
-    }
-}
-
 data class User(val name: String, val age: Int) {
 /*
 - equals()/hashCode() pair
@@ -37,6 +24,34 @@ data class User(val name: String, val age: Int) {
 - copy() function
 - componentN() functions corresponding to the properties in their order of declaration
  */
+}
+
+fun destructuring() {
+    val user = User("Sepp", 57)
+    val (name, age) = user
+    println("$name is $age")
+}
+
+fun getterSetterConstructor() {
+    val x = GetterSetterConstructor("a", "b")
+    println(x.baz)
+}
+
+class GetterSetterConstructor(foo: String, bar: String) {
+    var baz: String = ""
+    set(value) {
+        println("setter called")
+        if (value != "foo") {field = value}
+    }
+    get() {
+        println("getter called")
+        return field
+    }
+
+    init {
+        println("init called")
+        baz = foo
+    }
 }
 
 class Nephews() {
